@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <form action="{%url 'kaam:update' task.id %}" method="POST">
+        {% csrf_token %}    
+        <label for="task">Task:</label>
+        <input type="text" name="task" value="{{task.taskharu}}"> 
+        <label for="prio">Priority:</label>
+        <input type="number" name="prio" value = '{{task.priority}}' >
+        <input type="submit" value="add">
+    </form>     
+</body>
+</html>

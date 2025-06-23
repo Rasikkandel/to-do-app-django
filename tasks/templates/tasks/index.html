@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .nav{
+            display: flex;
+            height: 20vh;
+            background-color: rgb(146, 117, 117);
+            align-items: center;
+            justify-content: center;
+        }   
+        .today{
+            display: flex;
+            flex-direction: column;
+            background-color: aqua;
+            align-items: center;
+            position: relative;
+            top: 50px;
+            left: 25vw ; 
+            border: 5px solid yellow;
+            box-shadow: 2px red;
+            width: 50vw;
+            height: fit-content; 
+            font-size: 25px;
+            padding: 20px;
+        }  
+        li {
+            list-style: none;
+        } 
+        a{
+            position: relative;
+            left: 140px;
+        }
+        input{
+            zoom : 1.5;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div class="nav">
+        <h1>My Tasks</h1>
+    </div>
+    <div class="today">
+        <h3>Tasks for today:</h3>
+        <ul>
+            {% for i in task %}                                                     
+             <a href="{% url 'kaam:remove' i.id %}">remove task</a>
+             <a href="{% url 'kaam:update' i.id %}">update</a>
+            <li> <input type="checkbox"> {{ i }} </li>              
+            {% empty %}
+            <li>No tasks yet!</li>
+            {% endfor %}
+        </ul>        
+        <a href="{% url 'kaam:add' %}">Add tasks</a>
+    </div>
+</body>
+</html>
