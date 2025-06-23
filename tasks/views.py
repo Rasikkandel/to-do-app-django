@@ -8,7 +8,7 @@ def index(request) :
         prior = request.POST.get('prio')      
         if task: 
             taskss.objects.create(taskharu=task, priority=prior or 1)
-        return redirect('kaam:index')   # ✅ use namespace here               
+        return redirect('kaam:index')            
 # redirect instead of render garda refresh garda kheri pheri post hunxa 
     tasks = taskss.objects.all()             
     return render(request, "tasks/index.html", {
