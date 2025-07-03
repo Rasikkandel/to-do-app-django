@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-        <form action="{%url 'kaam:update' task.id %}" method="POST">
+        <form action="{%url 'update' task.id %}" method="POST">
         {% csrf_token %}    
         <label for="task">Task:</label>
         <input type="text" name="task" value="{{task.taskharu}}"> 
