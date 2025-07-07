@@ -1,110 +1,11 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Task Manager</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            max-width: 600px;
-            margin: 50px auto;
-            padding: 20px;
-            background-color: #f5f5f5;
-        }
-        
-        .form-container {
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        
-        h1 {
-            color: #333;
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        
-        .form-group {
-            margin-bottom: 20px;
-        }
-        
-        label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-            color: #555;
-        }
-        
-        input[type="text"], input[type="number"], select {
-            width: 100%;
-            padding: 10px;
-            border: 2px solid #ddd;
-            border-radius: 5px;
-            font-size: 16px;
-            transition: border-color 0.3s;
-        }
-        
-        input[type="text"]:focus, input[type="number"]:focus, select:focus {
-            outline: none;
-            border-color: #4CAF50;
-        }
-        
-        .priority-buttons {
-            display: flex;
-            gap: 10px;
-            margin-top: 5px;
-        }
-        
-        .priority-btn {
-            flex: 1;
-            padding: 10px;
-            border: 2px solid #ddd;
-            background: white;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-        
-        .priority-btn:hover {
-            background: #f0f0f0;
-        }
-        
-        .priority-btn.active {
-            background: #4CAF50;
-            color: white;
-            border-color: #4CAF50;
-        }
-        
-        .priority-btn.low { border-color: #2196F3; }
-        .priority-btn.medium { border-color: #FF9800; }
-        .priority-btn.high { border-color: #f44336; }
-        
-        .priority-btn.low.active { background: #2196F3; border-color: #2196F3; }
-        .priority-btn.medium.active { background: #FF9800; border-color: #FF9800; }
-        .priority-btn.high.active { background: #f44336; border-color: #f44336; }
-        
-        .submit-btn {
-            background: #4CAF50;
-            color: white;
-            padding: 12px 30px;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            cursor: pointer;
-            transition: background 0.3s;
-            width: 100%;
-        }
-        
-        .submit-btn:hover {
-            background: #45a049;
-        }
-        
-        .required {
-            color: #f44336;
-        }
-    </style>
+    <link rel="stylesheet" href="{ static 'tasks/add.css'}">
 </head>
 <body>
     <div class="form-container">
