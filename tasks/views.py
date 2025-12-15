@@ -12,7 +12,7 @@ from django.urls import reverse_lazy
 
 
 # FIXED: Added login_required decorator and fixed field name
-@login_required
+@login_required 
 def index(request):                         
     if request.method == "POST":       
         task = request.POST.get('task')     
@@ -26,9 +26,9 @@ def index(request):
             )                                                                                
         return redirect('index')                        
     
-    # FIXED: Use 'User' (capital U) to match your model field name
-    tasks = taskss.objects.filter(User=request.user)  
-    search_input = request.GET.get('search-name') or ''
+    # FIXED: Use 'User' (capital U) to match your model field name 
+    tasks = taskss.objects.filter(User=request.user)          
+    search_input = request.GET.get('search-name') or ''             
     if search_input : 
         tasks = tasks.filter(taskharu__icontains=search_input)
 
@@ -63,6 +63,7 @@ def update(request, task_id):
     
     return render(request, "tasks/update.html", {'task': task})        
 
+@login_required
 def logout_view(request):
     logout(request) 
     messages.success(request, "You have been logged out successfully")
@@ -77,5 +78,6 @@ class Register(FormView) :
         user = form.save() 
         if user is not None : 
             login(self.request , user) 
-        return super(Register , self).form_valid(form)
+        return super(Register , self).form_valid(form) 
 
+ 

@@ -1,6 +1,6 @@
 from django.urls import path 
-from django.urls import reverse_lazy
-from django.contrib.auth.views import LoginView , LogoutView
+from django.urls import reverse_lazy             
+from django.contrib.auth.views import LoginView , LogoutView 
 class custom(LoginView) : 
     template_name = 'tasks/user.html'
     # redirect_authenticated_user = True  
@@ -15,4 +15,4 @@ urlpatterns = [
     path('login/',custom.as_view(),name="login"),  
     path('logout/',views.logout_view,name="logout") ,  
     path('register/',Register.as_view(),name="register"),    
-]                                                                                                                                                                                                                                            
+]                                                                                                                                                                                                                                                      
